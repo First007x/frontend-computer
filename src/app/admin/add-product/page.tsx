@@ -51,60 +51,91 @@ export default function AddProductPage() {
     );
   }
 
-  return (
-    <div className="min-h-screen bg-black text-white p-8">
-      <form onSubmit={handleSubmit} className="max-w-xl mx-auto bg-[#121212] p-6 rounded-lg border border-gray-800 shadow-lg">
-        <h1 className="text-2xl mb-6 font-bold text-yellow-400">เพิ่มสินค้าใหม่ (Admin)</h1>
-        
-        {/* ชื่อสินค้า */}
-        <label className="block mb-1 text-sm font-medium text-gray-300">ชื่อสินค้า</label>
-        <input 
-          type="text" 
-          placeholder="ใส่ลำดับเครื่อง 01, 02, 03..." 
-          onChange={e => setForm({ ...form, name: e.target.value })} 
-          className="w-full mb-4 p-2 bg-gray-900 border border-gray-700 rounded text-white focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 outline-none transition" 
-          required 
-        />
+return (
+        <div className="min-h-screen bg-[#050b14] flex items-center justify-center p-8 font-mono relative overflow-hidden">
+            {/* Background Ambient Glow */}
+            <div className="absolute top-[-5%] left-[-5%] w-96 h-96 bg-yellow-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+            <div className="absolute bottom-[-5%] right-[-5%] w-96 h-96 bg-blue-500/5 blur-[120px] rounded-full pointer-events-none"></div>
 
-        {/* ราคา */}
-        <label className="block mb-1 text-sm font-medium text-gray-300">ราคา (บาท)</label>
-        <input 
-          type="number" 
-          placeholder="0"
-          min="0" 
-          max="500"
-          onChange={e => setForm({ ...form, price: e.target.value })} 
-          className="w-full mb-4 p-2 bg-gray-900 border border-gray-700 rounded text-white focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 outline-none transition" 
-          required 
-        />
+            <div className="max-w-xl w-full z-10 relative">
+                {/* Header Section */}
+                <div className="mb-8 border-l-4 border-yellow-500 pl-6">
+                    <h1 className="text-3xl font-black text-white italic tracking-tighter uppercase shadow-yellow-500/20">
+                        เพิ่มสินค้าใหม่ <span className="text-yellow-500">(Admin)</span>
+                    </h1>
+                </div>
 
-        {/* สเปคเครื่อง */}
-        <label className="block mb-1 text-sm font-medium text-gray-300">สเปคเครื่อง</label>
-        <textarea 
-          placeholder="ระบุรายละเอียดสเปค..." 
-          onChange={e => setForm({ ...form, spec: e.target.value })} 
-          className="w-full mb-4 p-2 bg-gray-900 border border-gray-700 rounded text-white focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 outline-none transition" 
-          rows={3} 
-        />
+                <form 
+                    onSubmit={handleSubmit} 
+                    className="bg-[#111827]/90 backdrop-blur-md border-2 border-yellow-500/20 p-10 rounded-xl shadow-[0_0_50px_rgba(234,179,8,0.05)] space-y-6"
+                >
+                    {/* ชื่อสินค้า */}
+                    <div className="space-y-2">
+                        <label className="block text-[11px] font-bold text-yellow-500/80 uppercase tracking-[0.2em] ml-1">ชื่อสินค้า</label>
+                        <input 
+                            type="text" 
+                            placeholder="ใส่ลำดับเครื่อง 01, 02, 03..." 
+                            onChange={e => setForm({ ...form, name: e.target.value })} 
+                            className="w-full p-4 bg-black/40 border border-yellow-500/20 rounded-lg text-white focus:outline-none focus:ring-1 focus:ring-yellow-500 focus:border-yellow-500 transition-all placeholder:text-gray-700" 
+                            required 
+                        />
+                    </div>
 
-        {/* รูปภาพ */}
-        <label className="block mb-1 text-sm font-medium text-gray-300">รูปภาพสินค้า</label>
-        <input 
-          type="file" 
-          accept="image/*"
-          onChange={e => setFile(e.target.files?.[0] || null)} 
-          className="w-full mb-6 text-sm text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-gray-800 file:text-yellow-400 hover:file:bg-gray-700 transition" 
-          required 
-        />
+                    {/* ราคา */}
+                    <div className="space-y-2">
+                        <label className="block text-[11px] font-bold text-yellow-500/80 uppercase tracking-[0.2em] ml-1">ราคา (บาท)</label>
+                        <input 
+                            type="number" 
+                            placeholder="0"
+                            min="0" 
+                            max="500"
+                            onChange={e => setForm({ ...form, price: e.target.value })} 
+                            className="w-full p-4 bg-black/40 border border-yellow-500/20 rounded-lg text-yellow-400 font-bold focus:outline-none focus:ring-1 focus:ring-yellow-500 transition-all placeholder:text-gray-700" 
+                            required 
+                        />
+                    </div>
 
-        {/* ปุ่มบันทึก */}
-        <button 
-          type="submit" 
-          className="w-full bg-blue-600 text-white py-2 rounded-lg font-bold hover:bg-blue-700 transition-colors shadow-sm"
-        >
-          บันทึกและแสดงสินค้า
-        </button>
-      </form>
-    </div>
-  );
+                    {/* สเปคเครื่อง */}
+                    <div className="space-y-2">
+                        <label className="block text-[11px] font-bold text-yellow-500/80 uppercase tracking-[0.2em] ml-1">สเปคเครื่อง</label>
+                        <textarea 
+                            placeholder="ระบุรายละเอียดสเปค..." 
+                            onChange={e => setForm({ ...form, spec: e.target.value })} 
+                            className="w-full p-4 bg-black/40 border border-yellow-500/20 rounded-lg text-gray-300 focus:outline-none focus:ring-1 focus:ring-yellow-500 transition-all placeholder:text-gray-700 resize-none italic" 
+                            rows={3} 
+                        />
+                    </div>
+
+                    {/* รูปภาพ */}
+                    <div className="space-y-2">
+                        <label className="block text-[11px] font-bold text-gray-500 uppercase tracking-[0.2em] ml-1">รูปภาพสินค้า</label>
+                        <div className="relative">
+                            <input 
+                                type="file" 
+                                accept="image/*"
+                                onChange={e => setFile(e.target.files?.[0] || null)} 
+                                className="w-full p-4 bg-yellow-500/5 border border-dashed border-yellow-500/20 rounded-lg text-xs text-gray-500 file:mr-4 file:py-1 file:px-4 file:rounded file:border-0 file:text-[10px] file:font-black file:bg-yellow-500 file:text-black hover:file:bg-yellow-400 transition-all cursor-pointer" 
+                                required 
+                            />
+                        </div>
+                    </div>
+
+                    {/* ปุ่มบันทึก */}
+                    <button 
+                        type="submit" 
+                        className="w-full bg-gradient-to-r from-blue-700 to-blue-500 hover:from-blue-600 hover:to-blue-400 text-white py-4 rounded-lg font-black uppercase tracking-widest transition-all shadow-[0_4px_0_rgb(29,78,216)] active:shadow-none active:translate-y-1 mt-4"
+                    >
+                        บันทึกและแสดงสินค้า
+                    </button>
+                </form>
+
+                {/* Footer Decor */}
+                <div className="mt-8 flex justify-between items-center opacity-30 px-2">
+                    <div className="h-[1px] flex-1 bg-yellow-500/50"></div>
+                    <span className="text-[9px] text-yellow-500 mx-4 font-bold tracking-[0.3em]">ระบบเพิ่มสินค้าเฉพาะแอดมิน</span>
+                    <div className="h-[1px] flex-1 bg-yellow-500/50"></div>
+                </div>
+            </div>
+        </div>
+    );
 }
