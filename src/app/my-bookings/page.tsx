@@ -59,7 +59,7 @@ export default function MyBookingsPage() {
             {/* ส่วนหัวของหน้า (Header Section) */}
             <div className="max-w-4xl mx-auto mb-10 border-l-4 border-cyan-500 pl-6">
                 <h1 className="text-4xl font-black text-white italic tracking-tighter">
-                    ประวัติการ<span className="text-cyan-500">_จอง</span>
+                    ประวัติการ<span className="text-cyan-500">จอง</span>
                 </h1>
                 <p className="text-cyan-500/60 text-sm mt-1 tracking-[0.3em]">
                     รายการทั้งหมด {myBookings.length} รายการ

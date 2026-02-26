@@ -59,7 +59,7 @@ export default function ProductList() {
             {/* ส่วนหัว (Header) */}
             <div className="max-w-7xl mx-auto mb-12 border-l-4 border-cyan-500 pl-6">
                 <h1 className="text-4xl font-black text-white italic tracking-tighter uppercase">
-                    รายการ<span className="text-cyan-500"> อุปกรณ์</span>
+                    รายการ<span className="text-cyan-500"> คอมพิวเตอร์ </span>
                 </h1>
                 <p className="text-cyan-500/60 text-sm mt-1 tracking-[0.3em]"> จำนวนเครื่องทั้งหมด {products.length} เครื่อง</p>
             </div>
@@ -100,7 +100,7 @@ export default function ProductList() {
 
                             <div className="flex justify-between items-end mb-6">
                                 <div>
-                                    <p className="text-[10px] text-yellow-500/70 font-bold uppercase tracking-widest">ราคาตลาด</p>
+                                    <p className="text-[10px] text-yellow-500/70 font-bold uppercase tracking-widest">ราคา / ชม.</p>
                                     <p className="text-3xl font-black text-yellow-400 tracking-tighter">
                                         {Number(item.price).toLocaleString()}<span className="text-sm ml-1 text-yellow-400/60">฿</span>
                                     </p>
